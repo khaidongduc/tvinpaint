@@ -18,7 +18,6 @@ def total_variation(img):
     dy = cvxpy.vec((img[:-1, 1:] - img[:-1, :-1]))
     D = cvxpy.vstack((dx, dy))
     norm = cvxpy.norm(D, p=2, axis=0)  # norm l2
-    # multiply with mask to get rid of black pixels, black pixel = 0
     known_diff_norm = cvxpy.multiply((img - damaged), 1 - (mask / 255)) ** 2
     return cvxpy.sum(norm) + (lamda / 2) * cvxpy.sum(known_diff_norm)
 
