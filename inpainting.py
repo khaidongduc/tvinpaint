@@ -1,3 +1,7 @@
+"""
+Inpainting using total variation minimization
+"""
+
 import numpy as np
 import cvxpy
 import cv2
