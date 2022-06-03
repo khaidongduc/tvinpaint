@@ -42,5 +42,5 @@ if __name__ == '__main__':
     damaged = cv2.imread('images/damaged.jpg', cv2.IMREAD_GRAYSCALE)
     mask = cv2.imread('images/mask.jpg', cv2.IMREAD_GRAYSCALE)
 
-    inpainted = image_inpaint(damaged, mask, verbose=True)
+    inpainted = image_inpaint(damaged, mask, verbose=True, max_iters=1000)
     cv2.imwrite("images/inpainted.jpg", inpainted)
